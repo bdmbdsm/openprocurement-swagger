@@ -2,13 +2,13 @@ swagger: "2.0"
 info:
   description: "
   The Open Procurement API is the only interface to Open Procurement database that is core unit of [Open Procurement](http://openprocurement.org) infrastructure.
-
-The Open Procurement API is a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer)-ful
+  
+  
+The **Open Procurement API** is a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer)-ful
 interface that provides programmatic access to Tender database of Open
 Procurement system.  It provides predictable URLs for accessing resources,
 and uses built-in HTTP features to receive commands and return responses. 
 This makes it easy to communicate with.
-
 The API accepts [JSON](http://json.org) or form-encoded content in
 requests.  It returns JSON content in all of its responses, including
 errors.  Only the UTF-8 character encoding is supported for both requests
@@ -68,4 +68,29 @@ paths:
         200:
           description: "OK"
         405:
-         description: "Stub"
+          description: "not OK"
+    head:
+      tags:
+      - "tenders"
+      summary: "Tenders List"
+      parameters:
+      - name: "tender_id"
+        in: "path"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "OK"
+        405:
+          description: "not OK"
+    patch:
+      tags:
+      - "tenders"
+      parameters:
+      - name: "tender_id"
+        in: "path"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "OK"
