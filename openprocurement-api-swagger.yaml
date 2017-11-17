@@ -1,0 +1,71 @@
+swagger: "2.0"
+info:
+  description: "
+  The Open Procurement API is the only interface to Open Procurement database that is core unit of [Open Procurement](http://openprocurement.org) infrastructure.
+
+The Open Procurement API is a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer)-ful
+interface that provides programmatic access to Tender database of Open
+Procurement system.  It provides predictable URLs for accessing resources,
+and uses built-in HTTP features to receive commands and return responses. 
+This makes it easy to communicate with.
+
+The API accepts [JSON](http://json.org) or form-encoded content in
+requests.  It returns JSON content in all of its responses, including
+errors.  Only the UTF-8 character encoding is supported for both requests
+and responses."
+  title: "Open Procurement API"
+  version: "0.10"
+  contact:
+    email: "info@quintagroup.org"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "api-sandbox.openprocurement.org"
+basePath: "/api/v2.3/"
+schemes:
+ - "https"
+tags:
+ - name: "tenders"
+   description: "Everything about tenders"
+paths:
+  /tenders:
+    get:
+      tags:
+      - "tenders"
+      summary: "Tenders List"
+      description: "request's description"
+      operationId: "getTender"
+      produces:
+      - "application/json"
+      responses:
+        405:
+          description: "Stub response"
+    head:
+      tags:
+      - "tenders"
+      responses:
+        405:
+         description: "Stub"
+      summary: "Tenders List"
+    post:
+      tags:
+      - "tenders"
+      responses:
+        405:
+         description: "Stub"
+      summary: "This API request is targeted to creating new Tenders by procuring organizations."
+  /tenders/{tender_id}:
+    get:
+      tags:
+      - "tenders"
+      summary: "Tender Read"
+      parameters:
+      - name: "tender_id"
+        in: "path"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "OK"
+        405:
+         description: "Stub"
